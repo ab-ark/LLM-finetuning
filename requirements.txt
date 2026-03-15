@@ -1,0 +1,11 @@
+# Core ML (install torch separately per your CUDA version)
+# pip install torch --index-url https://download.pytorch.org/whl/cu121
+transformers>=4.44.0
+trl>=0.9.0
+peft>=0.12.0
+datasets>=2.20.0
+accelerate>=0.33.0
+bitsandbytes>=0.43.0
+boto3>=1.35.0
+sagemaker>=2.230.0
+pyyaml>=6.0

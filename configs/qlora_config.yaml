@@ -1,0 +1,25 @@
+# AbArk LLM Fine-Tuning Recipes — QLoRA Config
+base_model: "meta-llama/Llama-3.1-8B-Instruct"
+output_dir: "./outputs/qlora_model"
+dataset_path: "data/train.jsonl"
+
+num_train_epochs: 2
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+max_seq_length: 1024
+val_ratio: 0.05
+seed: 42
+
+load_in_4bit: true
+bnb_4bit_compute_dtype: "bfloat16"
+bnb_4bit_quant_type: "nf4"
+use_nested_quant: true
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+
+use_wandb: false
+wandb_project: "abark-finetune"
+logging_steps: 10

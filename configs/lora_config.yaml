@@ -1,0 +1,26 @@
+# AbArk LLM Fine-Tuning Recipes — LoRA Config
+base_model: "meta-llama/Llama-3.2-1B-Instruct"
+output_dir: "./outputs/lora_model"
+dataset_path: "data/train.jsonl"
+task: "instruction_following"
+
+num_train_epochs: 3
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
+learning_rate: 2.0e-4
+max_seq_length: 2048
+val_ratio: 0.05
+seed: 42
+packing: true
+gradient_checkpointing: true
+use_flash_attention: true
+
+lora_r: 64
+lora_alpha: 128
+lora_dropout: 0.05
+
+use_wandb: false
+wandb_project: "abark-finetune"
+logging_steps: 10
+eval_steps: 100
+save_steps: 200
